@@ -1,0 +1,56 @@
+MPLINK 4.35, Linker
+Linker Map File - Created Tue Mar 23 14:18:41 2010
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x0000e6
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x0000e5      
+            230 out of 33048 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    cinco   0x000058    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                 comienza   0x000008    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                   cuatro   0x000044    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                      dec   0x0000d2    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                  dec_sub   0x0000dc    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                      dos   0x00001c    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                    lapso   0x0000c8    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                     ocho   0x000094    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+               pre_inicio   0x000004    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                  retardo   0x0000bc    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                     seis   0x00006c    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                    siete   0x000080    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                     tres   0x000030    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+               pre_inicio   0x000004    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                 comienza   0x000008    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                      dos   0x00001c    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                     tres   0x000030    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                   cuatro   0x000044    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                    cinco   0x000058    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                     seis   0x00006c    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                    siete   0x000080    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                     ocho   0x000094    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                  retardo   0x0000bc    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                    lapso   0x0000c8    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                      dec   0x0000d2    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+                  dec_sub   0x0000dc    program     static C:\MICROSS_II\2010secuencia\SECUENCIA.asm
+
+

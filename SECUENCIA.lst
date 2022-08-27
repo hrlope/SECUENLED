@@ -1,0 +1,839 @@
+MPASM  5.35                     SECUENCIA.ASM   3-23-2010  14:17:46         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001         list    p=18f452        
+                      00002 #include<p18f452.inc>
+                      00001         LIST
+                      00002 ; P18F452.INC  Standard Header File, Version 1.4   Microchip Technology, Inc.
+                      00983         LIST
+                      00003 
+  0000000A            00004 jj              equ             0x0A
+  0000000B            00005 kk              equ             0x0B
+  0000000C            00006 aa              equ             0x0C
+                      00007 
+                      00008 
+000000                00009         org             0x00
+                      00010 
+000000 6A93           00011         clrf    TRISB   ;configura puerto b como entrada
+000002 6A95           00012         clrf    TRISD   ;configura puerto b como entrada
+                      00013 
+000004                00014 pre_inicio
+                      00015         
+000004 6A81           00016         clrf                    PORTB
+000006 6A83           00017         clrf                    PORTD
+                      00018 
+                      00019 
+000008                00020 comienza
+                      00021 
+000008 0E04           00022         movlw           d'4'
+00000A 6E0A           00023         movwf           jj
+00000C 0E87           00024         movlw           d'135'
+00000E 6E0C           00025         movwf           aa      
+                      00026                                                 ;pone en uno los led's despues de medio segundo prende e
+                            l led siguiente y se apaga el anterior
+000010 8083           00027         bsf                     PORTD,0         ;menos el ultimo que cuando se apaga se prende 
+000012 8081           00028         bsf                     PORTB,0
+000014 EC5E F000      00029         call                    retardo
+                      00030         
+                      00031 
+000018 9083           00032         bcf                     PORTD,0
+00001A 9081           00033         bcf                     PORTB,0
+                      00034 
+                      00035 
+                      00036 
+00001C                00037 dos
+                      00038 
+00001C 0E04           00039         movlw           d'4'
+00001E 6E0A           00040         movwf           jj
+000020 0E87           00041         movlw           d'135'
+000022 6E0C           00042         movwf           aa      
+                      00043 
+000024 8283           00044         bsf                     PORTD,1
+000026 8281           00045         bsf                     PORTB,1
+000028 EC5E F000      00046         call                    retardo
+                      00047 
+                      00048 
+00002C 9283           00049         bcf                     PORTD,1
+MPASM  5.35                     SECUENCIA.ASM   3-23-2010  14:17:46         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00002E 9281           00050         bcf                     PORTB,1
+                      00051 
+                      00052 
+                      00053 
+000030                00054 tres
+                      00055 
+000030 0E04           00056         movlw           d'4'
+000032 6E0A           00057         movwf           jj
+000034 0E87           00058         movlw           d'135'
+000036 6E0C           00059         movwf           aa      
+                      00060 
+000038 8483           00061         bsf                     PORTD,2
+00003A 8481           00062         bsf                     PORTB,2
+00003C EC5E F000      00063         call                    retardo
+                      00064         
+                      00065 
+000040 9483           00066         bcf                     PORTD,2
+000042 9481           00067         bcf                     PORTB,2
+                      00068         
+                      00069 
+                      00070 
+000044                00071 cuatro
+                      00072 
+000044 0E04           00073         movlw           d'4'
+000046 6E0A           00074         movwf           jj
+000048 0E87           00075         movlw           d'135'
+00004A 6E0C           00076         movwf           aa      
+                      00077 
+00004C 8683           00078         bsf                     PORTD,3
+00004E 8681           00079         bsf                     PORTB,3
+000050 EC5E F000      00080         call                    retardo
+                      00081 
+                      00082 
+000054 9683           00083         bcf                     PORTD,3
+000056 9681           00084         bcf                     PORTB,3
+                      00085 
+                      00086 
+                      00087 
+000058                00088 cinco
+                      00089 
+000058 0E04           00090         movlw           d'4'
+00005A 6E0A           00091         movwf           jj
+00005C 0E87           00092         movlw           d'135'
+00005E 6E0C           00093         movwf           aa      
+                      00094 
+000060 8883           00095         bsf                     PORTD,4
+000062 8881           00096         bsf                     PORTB,4
+000064 EC5E F000      00097         call                    retardo
+                      00098 
+                      00099 
+000068 9883           00100         bcf                     PORTD,4
+00006A 9881           00101         bcf                     PORTB,4
+                      00102 
+MPASM  5.35                     SECUENCIA.ASM   3-23-2010  14:17:46         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00103 
+                      00104 
+                      00105 
+00006C                00106 seis
+                      00107 
+00006C 0E04           00108         movlw           d'4'
+00006E 6E0A           00109         movwf           jj
+000070 0E87           00110         movlw           d'135'
+000072 6E0C           00111         movwf           aa      
+                      00112 
+                      00113 
+000074 8A83           00114         bsf                     PORTD,5
+000076 8A81           00115         bsf                     PORTB,5
+000078 EC5E F000      00116         call                    retardo
+                      00117 
+                      00118 
+00007C 9A83           00119         bcf                     PORTD,5
+00007E 9A81           00120         bcf                     PORTB,5
+                      00121 
+                      00122 
+                      00123 
+000080                00124 siete
+                      00125 
+000080 0E04           00126         movlw           d'4'
+000082 6E0A           00127         movwf           jj
+000084 0E87           00128         movlw           d'135'
+000086 6E0C           00129         movwf           aa      
+                      00130 
+000088 8C83           00131         bsf                     PORTD,6
+00008A 8C81           00132         bsf                     PORTB,6
+00008C EC5E F000      00133         call                    retardo
+                      00134 
+                      00135 
+000090 9C83           00136         bcf                     PORTD,6
+000092 9C81           00137         bcf                     PORTB,6
+                      00138 
+                      00139 
+                      00140 
+000094                00141 ocho
+                      00142 
+000094 0E04           00143         movlw           d'4'
+000096 6E0A           00144         movwf           jj
+000098 0E87           00145         movlw           d'135'
+00009A 6E0C           00146         movwf           aa      
+                      00147 
+00009C 8E83           00148         bsf                     PORTD,7
+00009E 8E81           00149         bsf                     PORTB,7
+0000A0 EC5E F000      00150         call                    retardo
+                      00151         
+                      00152 
+0000A4 9E83           00153         bcf                     PORTD,7
+0000A6 9E81           00154         bcf                     PORTB,7
+                      00155 
+MPASM  5.35                     SECUENCIA.ASM   3-23-2010  14:17:46         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0000A8 0E04           00156         movlw           d'4'
+0000AA 6E0A           00157         movwf           jj
+0000AC 0E87           00158         movlw           d'135'
+0000AE 6E0C           00159         movwf           aa      
+                      00160 
+0000B0 6881           00161         setf                    PORTB
+0000B2 6883           00162         setf                    PORTD
+0000B4 EC5E F000      00163         call                    retardo 
+                      00164 
+0000B8 EF02 F000      00165         goto            pre_inicio      
+                      00166                 
+                      00167 
+0000BC                00168 retardo                                         ;retardo principál
+0000BC 0EEE           00169         movlw   d'238'
+0000BE 6E0B           00170         movwf   kk
+0000C0 2E0A           00171         decfsz  jj,f
+0000C2 EF64 F000      00172         goto    lapso
+0000C6 0012           00173         return
+                      00174 
+0000C8                00175 lapso
+0000C8 2E0B           00176         decfsz  kk,f                    ;retardo secundario
+0000CA EF64 F000      00177         goto    lapso
+0000CE EF69 F000      00178         goto    dec
+                      00179 
+0000D2                00180 dec     
+0000D2 2E0C           00181         decfsz  aa,f
+0000D4 EF6E F000      00182         goto    dec_sub
+0000D8 EF5E F000      00183         goto    retardo
+                      00184 
+0000DC                00185 dec_sub
+0000DC 2E0B           00186         decfsz  kk,f            
+0000DE EF6E F000      00187         goto    dec_sub
+0000E2 EF69 F000      00188         goto    dec     
+                      00189 
+                      00190         end
+MPASM  5.35                     SECUENCIA.ASM   3-23-2010  14:17:46         PAGE  5
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+A                                 00000000
+ACCESS                            00000000
+ACKDT                             00000005
+ACKEN                             00000004
+ACKSTAT                           00000006
+ADCON0                            00000FC2
+ADCON1                            00000FC1
+ADCS0                             00000006
+ADCS1                             00000007
+ADCS2                             00000006
+ADDEN                             00000003
+ADFM                              00000007
+ADIE                              00000006
+ADIF                              00000006
+ADIP                              00000006
+ADON                              00000000
+ADRESH                            00000FC4
+ADRESL                            00000FC3
+AN0                               00000000
+AN1                               00000001
+AN2                               00000002
+AN3                               00000003
+AN4                               00000005
+AN5                               00000000
+AN6                               00000001
+AN7                               00000002
+BANKED                            00000001
+BCLIE                             00000003
+BCLIF                             00000003
+BCLIP                             00000003
+BF                                00000000
+BOR                               00000000
+BRGH                              00000002
+BSR                               00000FE0
+C                                 00000000
+CCP1                              00000002
+CCP1CON                           00000FBD
+CCP1IE                            00000002
+CCP1IF                            00000002
+CCP1IP                            00000002
+CCP1M0                            00000000
+CCP1M1                            00000001
+CCP1M2                            00000002
+CCP1M3                            00000003
+CCP1X                             00000005
+CCP1Y                             00000004
+CCP2                              00000001
+CCP2A                             00000003
+CCP2CON                           00000FBA
+CCP2IE                            00000000
+CCP2IF                            00000000
+CCP2IP                            00000000
+CCP2M0                            00000000
+MPASM  5.35                     SECUENCIA.ASM   3-23-2010  14:17:46         PAGE  6
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CCP2M1                            00000001
+CCP2M2                            00000002
+CCP2M3                            00000003
+CCP2X                             00000005
+CCP2Y                             00000004
+CCPR1H                            00000FBF
+CCPR1L                            00000FBE
+CCPR2H                            00000FBC
+CCPR2L                            00000FBB
+CFGS                              00000006
+CHS0                              00000003
+CHS1                              00000004
+CHS2                              00000005
+CK                                00000006
+CKE                               00000006
+CKP                               00000004
+CLKO                              00000006
+CREN                              00000004
+CS                                00000002
+CSRC                              00000007
+D                                 00000005
+DATA_ADDRESS                      00000005
+DC                                00000001
+DC1B0                             00000004
+DC1B1                             00000005
+DC2B0                             00000004
+DC2B1                             00000005
+DDRA                              TRISA
+DDRB                              TRISB
+DDRC                              TRISC
+DDRD                              TRISD
+DDRE                              TRISE
+DONE                              00000002
+D_A                               00000005
+EEADR                             00000FA9
+EECON1                            00000FA6
+EECON2                            00000FA7
+EEDATA                            00000FA8
+EEIE                              00000004
+EEIF                              00000004
+EEIP                              00000004
+EEPGD                             00000007
+FAST                              00000001
+FERR                              00000002
+FREE                              00000004
+FSR0                              00000000
+FSR0H                             00000FEA
+FSR0L                             00000FE9
+FSR1                              00000001
+FSR1H                             00000FE2
+FSR1L                             00000FE1
+FSR2                              00000002
+FSR2H                             00000FDA
+MPASM  5.35                     SECUENCIA.ASM   3-23-2010  14:17:46         PAGE  7
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+FSR2L                             00000FD9
+GCEN                              00000007
+GIE                               00000007
+GIEH                              00000007
+GIEL                              00000006
+GO                                00000002
+GO_DONE                           00000002
+I2C_DAT                           00000005
+I2C_READ                          00000002
+I2C_START                         00000003
+I2C_STOP                          00000004
+IBF                               00000007
+IBOV                              00000005
+INDF0                             00000FEF
+INDF1                             00000FE7
+INDF2                             00000FDF
+INT0                              00000000
+INT0E                             00000004
+INT0F                             00000001
+INT0IE                            00000004
+INT0IF                            00000001
+INT1                              00000001
+INT1IE                            00000003
+INT1IF                            00000000
+INT1IP                            00000006
+INT2                              00000002
+INT2IE                            00000004
+INT2IF                            00000001
+INT2IP                            00000007
+INTCON                            00000FF2
+INTCON1                           00000FF2
+INTCON2                           00000FF1
+INTCON3                           00000FF0
+INTEDG0                           00000006
+INTEDG1                           00000005
+INTEDG2                           00000004
+IPEN                              00000007
+IPR1                              00000F9F
+IPR2                              00000FA2
+IRVST                             00000005
+LATA                              00000F89
+LATB                              00000F8A
+LATC                              00000F8B
+LATD                              00000F8C
+LATE                              00000F8D
+LVDCON                            00000FD2
+LVDEN                             00000004
+LVDIE                             00000002
+LVDIF                             00000002
+LVDIN                             00000005
+LVDIP                             00000002
+LVDL0                             00000000
+LVDL1                             00000001
+MPASM  5.35                     SECUENCIA.ASM   3-23-2010  14:17:46         PAGE  8
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+LVDL2                             00000002
+LVDL3                             00000003
+N                                 00000004
+NOT_A                             00000005
+NOT_ADDRESS                       00000005
+NOT_BOR                           00000000
+NOT_DONE                          00000002
+NOT_PD                            00000002
+NOT_POR                           00000001
+NOT_RBPU                          00000007
+NOT_RC8                           00000006
+NOT_RI                            00000004
+NOT_T1SYNC                        00000002
+NOT_T3SYNC                        00000002
+NOT_TO                            00000003
+NOT_TX8                           00000006
+NOT_W                             00000002
+NOT_WRITE                         00000002
+OBF                               00000006
+OERR                              00000001
+OSC2                              00000006
+OSCCON                            00000FD3
+OV                                00000003
+P                                 00000004
+PCFG0                             00000000
+PCFG1                             00000001
+PCFG2                             00000002
+PCFG3                             00000003
+PCL                               00000FF9
+PCLATH                            00000FFA
+PCLATU                            00000FFB
+PD                                00000002
+PEIE                              00000006
+PEN                               00000002
+PIE1                              00000F9D
+PIE2                              00000FA0
+PIR1                              00000F9E
+PIR2                              00000FA1
+PLUSW0                            00000FEB
+PLUSW1                            00000FE3
+PLUSW2                            00000FDB
+POR                               00000001
+PORTA                             00000F80
+PORTB                             00000F81
+PORTC                             00000F82
+PORTD                             00000F83
+PORTE                             00000F84
+POSTDEC0                          00000FED
+POSTDEC1                          00000FE5
+POSTDEC2                          00000FDD
+POSTINC0                          00000FEE
+POSTINC1                          00000FE6
+POSTINC2                          00000FDE
+MPASM  5.35                     SECUENCIA.ASM   3-23-2010  14:17:46         PAGE  9
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PR2                               00000FCB
+PREINC0                           00000FEC
+PREINC1                           00000FE4
+PREINC2                           00000FDC
+PRODH                             00000FF4
+PRODL                             00000FF3
+PSA                               00000003
+PSP0                              00000000
+PSP1                              00000001
+PSP2                              00000002
+PSP3                              00000003
+PSP4                              00000004
+PSP5                              00000005
+PSP6                              00000006
+PSP7                              00000007
+PSPIE                             00000007
+PSPIF                             00000007
+PSPIP                             00000007
+PSPMODE                           00000004
+R                                 00000002
+RA0                               00000000
+RA1                               00000001
+RA2                               00000002
+RA3                               00000003
+RA4                               00000004
+RA5                               00000005
+RA6                               00000006
+RB0                               00000000
+RB1                               00000001
+RB2                               00000002
+RB3                               00000003
+RB4                               00000004
+RB5                               00000005
+RB6                               00000006
+RB7                               00000007
+RBIE                              00000003
+RBIF                              00000000
+RBIP                              00000000
+RBPU                              00000007
+RC0                               00000000
+RC1                               00000001
+RC2                               00000002
+RC3                               00000003
+RC4                               00000004
+RC5                               00000005
+RC6                               00000006
+RC7                               00000007
+RC8_9                             00000006
+RC9                               00000006
+RCD8                              00000000
+RCEN                              00000003
+RCIE                              00000005
+RCIF                              00000005
+MPASM  5.35                     SECUENCIA.ASM   3-23-2010  14:17:46         PAGE 10
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RCIP                              00000005
+RCON                              00000FD0
+RCREG                             00000FAE
+RCSTA                             00000FAB
+RD                                00000000
+RD0                               00000000
+RD1                               00000001
+RD16                              00000007
+RD2                               00000002
+RD3                               00000003
+RD4                               00000004
+RD5                               00000005
+RD6                               00000006
+RD7                               00000007
+RE0                               00000000
+RE1                               00000001
+RE2                               00000002
+READ_WRITE                        00000002
+RI                                00000004
+RSEN                              00000001
+RX                                00000007
+RX9                               00000006
+RX9D                              00000000
+R_W                               00000002
+S                                 00000003
+SCK                               00000003
+SCL                               00000003
+SCS                               00000000
+SDA                               00000004
+SDI                               00000004
+SDO                               00000005
+SEN                               00000000
+SMP                               00000007
+SPBRG                             00000FAF
+SPEN                              00000007
+SREN                              00000005
+SS                                00000005
+SSPADD                            00000FC8
+SSPBUF                            00000FC9
+SSPCON1                           00000FC6
+SSPCON2                           00000FC5
+SSPEN                             00000005
+SSPIE                             00000003
+SSPIF                             00000003
+SSPIP                             00000003
+SSPM0                             00000000
+SSPM1                             00000001
+SSPM2                             00000002
+SSPM3                             00000003
+SSPOV                             00000006
+SSPSTAT                           00000FC7
+STATUS                            00000FD8
+STKFUL                            00000007
+MPASM  5.35                     SECUENCIA.ASM   3-23-2010  14:17:46         PAGE 11
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+STKPTR                            00000FFC
+STKUNF                            00000006
+SWDTE                             00000000
+SWDTEN                            00000000
+SYNC                              00000004
+T08BIT                            00000006
+T0CKI                             00000004
+T0CON                             00000FD5
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0IP                              00000002
+T0PS0                             00000000
+T0PS1                             00000001
+T0PS2                             00000002
+T0SE                              00000004
+T1CKI                             00000000
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CON                             00000FCD
+T1INSYNC                          00000002
+T1OSCEN                           00000003
+T1OSI                             00000001
+T1OSO                             00000000
+T1SYNC                            00000002
+T2CKPS0                           00000000
+T2CKPS1                           00000001
+T2CON                             00000FCA
+T3CCP1                            00000003
+T3CCP2                            00000006
+T3CKPS0                           00000004
+T3CKPS1                           00000005
+T3CON                             00000FB1
+T3INSYNC                          00000002
+T3SYNC                            00000002
+TABLAT                            00000FF5
+TBLPTRH                           00000FF7
+TBLPTRL                           00000FF6
+TBLPTRU                           00000FF8
+TMR0H                             00000FD7
+TMR0IE                            00000005
+TMR0IF                            00000002
+TMR0IP                            00000002
+TMR0L                             00000FD6
+TMR0ON                            00000007
+TMR1CS                            00000001
+TMR1H                             00000FCF
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1IP                            00000000
+TMR1L                             00000FCE
+TMR1ON                            00000000
+TMR2                              00000FCC
+MPASM  5.35                     SECUENCIA.ASM   3-23-2010  14:17:46         PAGE 12
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2IP                            00000001
+TMR2ON                            00000002
+TMR3CS                            00000001
+TMR3H                             00000FB3
+TMR3IE                            00000001
+TMR3IF                            00000001
+TMR3IP                            00000001
+TMR3L                             00000FB2
+TMR3ON                            00000000
+TO                                00000003
+TOSH                              00000FFE
+TOSL                              00000FFD
+TOSU                              00000FFF
+TOUTPS0                           00000003
+TOUTPS1                           00000004
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000F92
+TRISB                             00000F93
+TRISC                             00000F94
+TRISD                             00000F95
+TRISE                             00000F96
+TRISE0                            00000000
+TRISE1                            00000001
+TRISE2                            00000002
+TRMT                              00000001
+TX                                00000006
+TX8_9                             00000006
+TX9                               00000006
+TX9D                              00000000
+TXD8                              00000000
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXIP                              00000004
+TXREG                             00000FAD
+TXSTA                             00000FAC
+UA                                00000001
+VREFM                             00000002
+VREFP                             00000003
+W                                 00000000
+WCOL                              00000007
+WDTCON                            00000FD1
+WR                                00000001
+WREG                              00000FE8
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_BORV_20_2L                       000000FF
+_BORV_27_2L                       000000FB
+_BORV_42_2L                       000000F7
+MPASM  5.35                     SECUENCIA.ASM   3-23-2010  14:17:46         PAGE 13
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_BORV_45_2L                       000000F3
+_BOR_OFF_2L                       000000FD
+_BOR_ON_2L                        000000FF
+_CCP2MX_OFF_3H                    000000FE
+_CCP2MX_ON_3H                     000000FF
+_CONFIG1H                         00300001
+_CONFIG1L                         00300000
+_CONFIG2H                         00300003
+_CONFIG2L                         00300002
+_CONFIG3H                         00300005
+_CONFIG3L                         00300004
+_CONFIG4H                         00300007
+_CONFIG4L                         00300006
+_CONFIG5H                         00300009
+_CONFIG5L                         00300008
+_CONFIG6H                         0030000B
+_CONFIG6L                         0030000A
+_CONFIG7H                         0030000D
+_CONFIG7L                         0030000C
+_CP0_OFF_5L                       000000FF
+_CP0_ON_5L                        000000FE
+_CP1_OFF_5L                       000000FF
+_CP1_ON_5L                        000000FD
+_CP2_OFF_5L                       000000FF
+_CP2_ON_5L                        000000FB
+_CP3_OFF_5L                       000000FF
+_CP3_ON_5L                        000000F7
+_CPB_OFF_5H                       000000FF
+_CPB_ON_5H                        000000BF
+_CPD_OFF_5H                       000000FF
+_CPD_ON_5H                        0000007F
+_DEBUG_OFF_4L                     000000FF
+_DEBUG_ON_4L                      0000007F
+_DEVID1                           003FFFFE
+_DEVID2                           003FFFFF
+_EBTR0_OFF_7L                     000000FF
+_EBTR0_ON_7L                      000000FE
+_EBTR1_OFF_7L                     000000FF
+_EBTR1_ON_7L                      000000FD
+_EBTR2_OFF_7L                     000000FF
+_EBTR2_ON_7L                      000000FB
+_EBTR3_OFF_7L                     000000FF
+_EBTR3_ON_7L                      000000F7
+_EBTRB_OFF_7H                     000000FF
+_EBTRB_ON_7H                      000000BF
+_ECIO_OSC_1H                      000000FD
+_EC_OSC_1H                        000000FC
+_HSPLL_OSC_1H                     000000FE
+_HS_OSC_1H                        000000FA
+_IDLOC0                           00200000
+_IDLOC1                           00200001
+_IDLOC2                           00200002
+_IDLOC3                           00200003
+MPASM  5.35                     SECUENCIA.ASM   3-23-2010  14:17:46         PAGE 14
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_IDLOC4                           00200004
+_IDLOC5                           00200005
+_IDLOC6                           00200006
+_IDLOC7                           00200007
+_LP_OSC_1H                        000000F8
+_LVP_OFF_4L                       000000FB
+_LVP_ON_4L                        000000FF
+_OSCS_OFF_1H                      000000FF
+_OSCS_ON_1H                       000000DF
+_PWRT_OFF_2L                      000000FF
+_PWRT_ON_2L                       000000FE
+_RCIO_OSC_1H                      000000FF
+_RC_OSC_1H                        000000FB
+_STVR_OFF_4L                      000000FE
+_STVR_ON_4L                       000000FF
+_WDTPS_128_2H                     000000FF
+_WDTPS_16_2H                      000000F9
+_WDTPS_1_2H                       000000F1
+_WDTPS_2_2H                       000000F3
+_WDTPS_32_2H                      000000FB
+_WDTPS_4_2H                       000000F5
+_WDTPS_64_2H                      000000FD
+_WDTPS_8_2H                       000000F7
+_WDT_OFF_2H                       000000FE
+_WDT_ON_2H                        000000FF
+_WRT0_OFF_6L                      000000FF
+_WRT0_ON_6L                       000000FE
+_WRT1_OFF_6L                      000000FF
+_WRT1_ON_6L                       000000FD
+_WRT2_OFF_6L                      000000FF
+_WRT2_ON_6L                       000000FB
+_WRT3_OFF_6L                      000000FF
+_WRT3_ON_6L                       000000F7
+_WRTB_OFF_6H                      000000FF
+_WRTB_ON_6H                       000000BF
+_WRTC_OFF_6H                      000000FF
+_WRTC_ON_6H                       000000DF
+_WRTD_OFF_6H                      000000FF
+_WRTD_ON_6H                       0000007F
+_XT_OSC_1H                        000000F9
+__18F452                          00000001
+__DEBUG                           1
+aa                                0000000C
+cinco                             00000058
+comienza                          00000008
+cuatro                            00000044
+dec                               000000D2
+dec_sub                           000000DC
+dos                               0000001C
+jj                                0000000A
+kk                                0000000B
+lapso                             000000C8
+ocho                              00000094
+MPASM  5.35                     SECUENCIA.ASM   3-23-2010  14:17:46         PAGE 15
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+pre_inicio                        00000004
+retardo                           000000BC
+seis                              0000006C
+siete                             00000080
+tres                              00000030
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+00C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXX---------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Bytes Used:   230
+Program Memory Bytes Free: 32538
+
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+
